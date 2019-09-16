@@ -22,6 +22,11 @@ High level goals include
 
 * The applications should be able to run as a ChRIS plugin or a standalone application on
 
+## 4. Solution Concept
+
+### High Level Outline:
+
+* 
 ## 5. Acceptance criteria of the project
 
 * Use the first application to train neural network on data provided.
