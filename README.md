@@ -17,3 +17,21 @@ High level goals include
 
 * Clinical Researchers
 
+
+## 5. Acceptance criteria of the project
+
+* Use the first application to train neural network on data provided.
+
+* Perform test on final classifier on new data provided by Boston Children's hospital in the MOC.
+
+## 6. Release Planning 
+
+### Release #1
+
+* Test the existing docker image that performs classification on MNIST dataset on local environment
+* Collect and preprocess training data
+
+### Release #2
+
+* Design a basic network capable of training the given dataset
+* Train the neural network using new data
