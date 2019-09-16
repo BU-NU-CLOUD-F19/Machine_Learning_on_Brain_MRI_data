@@ -26,7 +26,14 @@ High level goals include
 
 ### High Level Outline:
 
-* 
+<img src="https://github.com/BU-NU-CLOUD-F19/Machine_Learning_on_Brain_MRI_data/blob/master/Screen%20Shot%202019-09-16%20at%201.22.50%20PM.png" height="200" />
+
+Source-to-Image (S2I) is a framework that makes it easy to write images that take application source code as an input and produce a new image that runs the assembled application as output.
+
+We will use S2I to package our code along with all the dependencies to create an image which will run on docker.
+
+
+
 ## 5. Acceptance criteria of the project
 
 * Use the first application to train neural network on data provided.
