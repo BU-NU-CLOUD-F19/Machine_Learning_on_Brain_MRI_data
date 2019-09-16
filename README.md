@@ -2,20 +2,18 @@
 
 ## 1. Vision and goals of the project
 
-We will develop two containarized applications that run on ChRIS cloud computing platform as well as work as standalone applications to help segment brain MRI data for researchers.
+#### Vision 
 
-High level goals include
+* Rapid segmentation of brain images into different regions and tissues using machine learning app or plugin to accelerate    diagnosis and open new avenues of research.
+#### High level goals include:
+*	Developing a containerized application that trains convolutional network using precomputed features to optimize a model to perform brain region segmentation.
 
-* A containerized application that trains convolutional network using precomputed features to optimize a model to perform brain region segmentation
-
-* A containerized application that will use this pretrained model to segment new images
+*	Developing a containerized application that will use this pre trained model to segment new images 
 
 
 ## 2. Users/Personas Of The Project
 
-### End Users
-
-* Clinical Researchers
+* The application or plugins will be used by clinicians and researchers
 
 
 ## 3. Scope and Features
