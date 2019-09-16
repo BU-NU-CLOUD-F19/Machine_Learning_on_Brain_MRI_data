@@ -1,4 +1,4 @@
-# Machine_Learning_on_Brain_MRI_data
+# Machine Learning on Brain MRI data
 
 ## 1. Vision and goals of the project
 
