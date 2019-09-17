@@ -18,7 +18,11 @@
 
 ## 3. Scope and Features
 
-* The applications should be able to run as a ChRIS plugin or a standalone application on
+### Major Features include
+
+* Containerized application able to run on ChRIS as well as standalone systems
+* Training of Neural network with data given through MOC
+* Segmenting brain MRI using pretrained model
 
 ## 4. Solution Concept
 
