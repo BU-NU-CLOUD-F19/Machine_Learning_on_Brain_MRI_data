@@ -4,11 +4,15 @@
 
 #### Vision 
 
-* Rapid segmentation of brain images into different regions and tissues using machine learning app or plugin to accelerate    diagnosis and open new avenues of research.
-#### High level goals include:
-*	Developing a containerized application that trains convolutional network using precomputed features to optimize a model to perform brain region segmentation.
+* The main idea of the project is to expand an existing Cloud application that is trained on MNIST data to identify digits, to classify Brain MRI data. The cloud platform we will use for this project is ChRIS which is a collaboration between Boston Children's Hospital and Redhat.
 
-*	Developing a containerized application that will use this pre trained model to segment new images 
+
+#### High level goals include:
+*	Pre-process the Brain MRI data that are in. mgz form to NIfTI(https://nifti.nimh.nih.gov) format so that it will be easy for ML models to understand
+*	Create a ChRIS plugin to train an ML model on the pre-processed MRI data and save the trained model in an output location
+*	Create a ChRIS plugin to infer from the saved trained model and store the classified images in an output location
+*	Package the application so that it can run on any linux based kernel
+
 
 
 ## 2. Users/Personas Of The Project
@@ -20,9 +24,8 @@
 
 ### Major Features include
 
-* Containerized application able to run on ChRIS as well as standalone systems
-* Training of Neural network with data given through MOC
-* Segmenting brain MRI using pretrained model
+*	To create 2 plugins: Training Layer & Inference Layer in the existing application to use ML to classify Brain MRI data
+* Modify the existing application to train on new Brain MRI data of .mgz type
 
 ## 4. Solution Concept
 
