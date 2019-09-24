@@ -27,6 +27,14 @@
 *	To create 2 plugins: Training Layer & Inference Layer in the existing application to use ML to classify Brain MRI data
 * Modify the existing application to train on new Brain MRI data of .mgz type
 
+
+### Out of Scope/Stretch goals:
+*	Efficiency/accuracy of the trained model
+*	Enhancement/Modification of chRis platform/architecture to run the application
+*	Automating any of the scope goals in the platform
+*	Any UI for the application
+
+
 ## 4. Solution Concept
 
 ### High Level Outline:
