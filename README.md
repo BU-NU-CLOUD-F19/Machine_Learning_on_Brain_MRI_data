@@ -31,11 +31,22 @@
 
 ### High Level Outline:
 
-<img src="https://github.com/BU-NU-CLOUD-F19/Machine_Learning_on_Brain_MRI_data/blob/master/Screen%20Shot%202019-09-16%20at%201.22.50%20PM.png" height="200" />
+*	First major task is to understand the Brain MRI data that are in .mgz format and carefully pre-process to NiFTI/any ML recognizable format to create a standardize data for the ML models to be trained on. This task also includes preprocessing of  the labels to ML readable format for the training models.
+The sample data visualization is shown below:
 
-Source-to-Image (S2I) is a framework that makes it easy to write images that take application source code as an input and produce a new image that runs the assembled application as output.
+![Image description](https://github.com/BU-NU-CLOUD-F19/Machine_Learning_on_Brain_MRI_data/blob/master/PACSPull_Output.png)
 
-We will use S2I to package our code along with all the dependencies to create an image which will run on docker.
+*	Create a plug-in using ChRIS cookie cutter module to develop a ML model in python to take these pre-processed data and labels and train the model so that it is able to classify on test dataset. Save these trained models to an output location so that it can used by the next layer/plug-in.
+*	Create a plug-in using chrish cookie cutter to develop an inference layer in python that will take the saved train models from the above layer and classify any unseen brain MRI data and save the inference in an output location.The overall flow diagram for both of these application is shown below.
+
+![Image description](https://github.com/BU-NU-CLOUD-F19/Machine_Learning_on_Brain_MRI_data/blob/master/Screen%20Shot%202019-09-24%20at%203.15.16%20PM.png)
+
+
+
+The flow of data in the whole system will be from d0 which is input to our first application which trains a model on the given input data and generates a model file(.pb file) as an output o0. This pretrained model will be used by the second application which does the inference on test images and generate segmentation for these images as an output.
+
+*	Integrate these stand-alone plug-ins into the existing application to work seamlessly
+
 
 
 
