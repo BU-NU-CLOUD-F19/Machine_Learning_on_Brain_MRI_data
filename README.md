@@ -36,25 +36,39 @@ The sample data visualization is shown below:
 
 ![Image description](https://github.com/BU-NU-CLOUD-F19/Machine_Learning_on_Brain_MRI_data/blob/master/PACSPull_Output.png)
 
-*	Create a plug-in using ChRIS cookie cutter module to develop a ML model in python to take these pre-processed data and labels and train the model so that it is able to classify on test dataset. Save these trained models to an output location so that it can used by the next layer/plug-in.
-*	Create a plug-in using chrish cookie cutter to develop an inference layer in python that will take the saved train models from the above layer and classify any unseen brain MRI data and save the inference in an output location.The overall flow diagram for both of these application is shown below.
+
+### The two major plugin description is as mentioned below.
+
+
+*	Create a plug-in using ChRIS cookie cutter module to develop a ML model using python to take these pre-processed data and labels and train the model so that it is able to classify on test dataset. Save these trained models to an output location so that it can used by the next layer/plug-in.
+*	Create a plug-in using ChRIS cookie cutter to develop an inference layer using python that will take the saved train models from the above layer and classify any unseen brain MRI data and save the inference in an output location.The overall flow diagram for both of these application is shown below.
 
 ![Image description](https://github.com/BU-NU-CLOUD-F19/Machine_Learning_on_Brain_MRI_data/blob/master/Screen%20Shot%202019-09-24%20at%203.15.16%20PM.png)
 
 
 
-The flow of data in the whole system will be from d0 which is input to our first application which trains a model on the given input data and generates a model file(.pb file) as an output o0. This pretrained model will be used by the second application which does the inference on test images and generate segmentation for these images as an output.
+The flow of data in the whole system will be from d0 which is input data to our first application and contains brain MRI images as well labels to train a machine learning model that segments these images and generates a model file(.pb file) as an output o0. This pretrained model will be used by the second application which does the inference on test images and generate segmentation for these images as an output.
 
-*	Integrate these stand-alone plug-ins into the existing application to work seamlessly
+### Machine learning methodology
+
+* We are going to use tensorflow as a main tool to create a machine learning model and train on our data. The machine learning workflow is explained in the image below.
+
+
+
+
+
 
 
 
 
 ## 5. Acceptance criteria of the project
 
-* Use the first application to train neural network on data provided.
+*	Correctly pre-process the Brain MRI images for the training model to be trained on
+*	The training model should be able to fetch pre-processed data from an input location and store a trained model on some output location
+*	The inference model should be able to pick up the trained models and classify any new images and store it in some output location
+*	All these layers should be integrated in the cloud platform so that it can generate a docker image to be used on a linux kernel
 
-* Perform test on final classifier on new data provided by Boston Children's hospital in the MOC.
+
 
 ## 6. Release Planning 
 
