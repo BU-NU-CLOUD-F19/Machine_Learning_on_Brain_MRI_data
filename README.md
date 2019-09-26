@@ -90,7 +90,8 @@ This sprint will mainly focus on setting up the infrastructure and understanding
 * Survey existing literature for 3D image segmentation
 
 
-### Release #2
+### Sprint #2
 
-* Design a basic network capable of training the given dataset
-* Train the neural network using new data
+For this sprint we will focus on converting an existing application that trains neural network inside a docker image and uses s2i to a ChRIS compatible application and start working on a plugin that can preprocess .mgz images and convert them to a ML readable format. The major tasks include:
+
+
