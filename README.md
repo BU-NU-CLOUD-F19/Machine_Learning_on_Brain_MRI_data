@@ -94,4 +94,10 @@ This sprint will mainly focus on setting up the infrastructure and understanding
 
 For this sprint we will focus on converting an existing application that trains neural network inside a docker image and uses s2i to a ChRIS compatible application and start working on a plugin that can preprocess .mgz images and convert them to a ML readable format. The major tasks include:
 
+* Make the existing prototype application compatible with ChRIS.
+* Write a script to create Pre processing data into matrix format.
+* Create a simple plugin similar to a simpledsapp(https://github.com/FNNDSC/pl-simpledsapp) for preprocessing of images
+* Model a simple neural data that can use preprocessed data as input
+
+
 
