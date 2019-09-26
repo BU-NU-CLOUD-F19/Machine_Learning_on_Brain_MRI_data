@@ -80,10 +80,15 @@ The flow of data in the whole system will be from d0 which is input data to our 
 
 ## 6. Release Planning 
 
-### Release #1
+### Sprint #1
 
-* Test the existing docker image that performs classification on MNIST dataset on local environment
-* Collect and preprocess training data
+This sprint will mainly focus on setting up the infrastructure and understanding of the plugins that already exist. For this sprint major tasks are as described below.
+* Setting up environment for and run existing application that trains a neural network to classify on MNIST datset.
+* Setting up a sample ChRIS plugin using Cookie Cutter 
+* Transfer brain data and organize inputs and labels for training
+* Finding a method to visualize and load this .mgz files in python
+* Survey existing literature for 3D image segmentation
+
 
 ### Release #2
 
