@@ -121,6 +121,6 @@ For this sprint we will focus on converting an existing application that trains 
 
 * Are the images created by S2I compatible with ChRIS or not?
 * How does `docker run <image_name>` runs the model on testing data. We know that the "run" script present in /.s2i/bin directory is runs the testing.py file, but how does `docker run <image_name>` calls the "run" script in the first place?
-
-
+* Should we preprocess all the images before running training and inference both or prerprocess when they are needed?
+* How to version different neural network and switch at time of inference?
 
