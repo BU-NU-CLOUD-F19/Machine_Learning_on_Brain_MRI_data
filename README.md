@@ -23,9 +23,10 @@
 
 ### Major Features include
 
-*	To create 2 plugins: Training Layer & Inference Layer in the existing application to use ML to classify Brain MRI data
-* Modify the existing application to train on new Brain MRI data of .mgz type
-
+*	To create major plugins: 
+1. A plugin to preprocess the input .mgz images
+2. A plugin to train the machine learning model with given images
+3. A plugin to infer segmented images given brain MRI images.
 
 ### Out of Scope/Stretch goals:
 *	Efficiency/accuracy of the trained model
