@@ -24,7 +24,7 @@
 ### Major Features include
 
 *	To create major plugins: 
-1. A plugin to preprocess the input .mgz images
+1. A plugin to preprocess the input .mgz images. This plugin should read mgz images that are uploaded for inference or training from given input location and should preprocess them to a machine learning compatible format and store to train or inference folder according to the option selected.
 2. A plugin to train the machine learning model with given images
 3. A plugin to infer segmented images given brain MRI images.
 
