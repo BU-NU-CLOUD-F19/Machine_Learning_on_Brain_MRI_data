@@ -4,7 +4,7 @@
 
 #### Vision 
 
-* The main idea of the project is to expand an existing Cloud application that is trained on MNIST data to identify digits, to classify Brain MRI data. The cloud platform we will use for this project is ChRIS which is a collaboration between Boston Children's Hospital and Redhat.
+* Expand an existing Cloud based Machine Learning application that is trained on MNIST data to identify digits, to classify Brain MRI data and make the application compatible on ChRIS, an opensource distributed software platform(https://github.com/FNNDSC/CHRIS_docs).
 
 
 #### High level goals include:
@@ -59,14 +59,15 @@ The flow of data in the whole system will be from d0 which is input data to our 
 
 ### Machine learning methodology
 
-* We are going to use tensorflow as a main tool to create a machine learning model and train on our data. 
+* We are going to use tensorflow as a main tool to create a machine learning model and train on our data. The machine learning workflow is explained in the image below.
 
 
 
 
 
 
-The main machine learning problem that will be attempted to solve in this application is segmentation of a 3D image and we are yet to discover an architecture that will help us achieve the task. 
+
+
 
 ## 5. Acceptance criteria of the project
 
