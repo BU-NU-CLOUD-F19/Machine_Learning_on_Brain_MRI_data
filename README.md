@@ -73,7 +73,6 @@ The flow of data in the whole system will be from d0 which is input data to our 
 *	Correctly pre-process the Brain MRI images for the training model. That is convert the image from .mgz format to ML understandable format.
 *	The training model should be able to fetch pre-processed data from an input directory and store the trained model in an output directory.
 *	The inference model should be able to pick up the trained model and classify any new images and store it in an output directory
-*	All these layers should be integrated in the cloud platform so that it can generate a docker images to be used on a linux kernel.
 
 
 
