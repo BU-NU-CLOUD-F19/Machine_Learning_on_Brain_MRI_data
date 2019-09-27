@@ -89,6 +89,8 @@ This sprint will mainly focus on setting up the infrastructure and understanding
 * Finding a method to visualize and load this .mgz files in python
 * Survey existing literature for 3D image segmentation
 
+#### Sprint #1 demo presentation: https://docs.google.com/presentation/d/1F1Ue_Y8czt1cEbp_1YD7r1CQM0LiCNneU5yJLxmNaBk/edit?usp=sharing
+
 
 ### Sprint #2
 
