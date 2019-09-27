@@ -72,7 +72,10 @@ docker run -v $(pwd)/in:/incoming -v $(pwd)/out:/outgoing       \
 
 ### Machine learning methodology
 
-* We are going to use tensorflow as a main tool to create a machine learning model and train on our data. The machine learning workflow is explained in the image below.
+* We are going to use tensorflow as a main tool to create a machine learning model and train on our data. The main machine learning challenge is to develop a neural network architecture that can take as input 3D images and generate same size of masks as an output. This problem is known as 3d image segmentation.
+
+
+![](https://github.com/BU-NU-CLOUD-F19/Machine_Learning_on_Brain_MRI_data/blob/master/Screen%20Shot%202019-09-27%20at%209.11.37%20AM.png)
 
 
 
