@@ -59,15 +59,14 @@ The flow of data in the whole system will be from d0 which is input data to our 
 
 ### Machine learning methodology
 
-* We are going to use tensorflow as a main tool to create a machine learning model and train on our data. The machine learning workflow is explained in the image below.
+* We are going to use tensorflow as a main tool to create a machine learning model and train on our data. 
 
 
 
 
 
 
-
-
+The main machine learning problem that will be attempted to solve in this application is segmentation of a 3D image and we are yet to discover an architecture that will help us achieve the task. 
 
 ## 5. Acceptance criteria of the project
 
