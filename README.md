@@ -25,8 +25,8 @@
 
 *	To create major plugins: 
 1. A plugin to preprocess the input .mgz images. This plugin should read mgz images that are uploaded for inference or training from given input location and should preprocess them to a machine learning compatible format and store to train or inference folder according to the option selected.
-2. A plugin to train the machine learning model with given images
-3. A plugin to infer segmented images given brain MRI images.
+2. A plugin to train the machine learning model with images present in an input directory and save the trained model in an output directory, where the input and output directories are given as a positional arguments in the docker run command.
+3. A plugin which loads the saved model and test images from input directories and saves the inferred segmented images to an output directory, where the input and output directories are given as a positional arguments in the docker run command.
 
 ### Out of Scope/Stretch goals:
 *	Efficiency/accuracy of the trained model
