@@ -16,7 +16,7 @@
 
 ## 2. Users/Personas Of The Project
 
-* The application or plugins will be used by clinicians and researchers
+* The application or plugins will be used by clinicians and researchers who wants to segment the Brain MRI data which is in mgz 3d image format to analyze the MRI in a better way. Also Machine learning researchers who wants to try out different models without worrying about the environment and data preprocessing setup can use this application.
 
 
 ## 3. Scope and Features
