@@ -11,7 +11,6 @@
 *	Pre-process the Brain MRI data that are in. mgz form to NIfTI(https://nifti.nimh.nih.gov) format so that it will be easy for ML models to understand
 *	Create a ChRIS plugin to train an ML model on the pre-processed MRI data and save the trained model in an output location
 *	Create a ChRIS plugin to infer from the saved trained model and store the classified images in an output location
-*	Package the application so that it can run on any linux based kernel
 
 
 
