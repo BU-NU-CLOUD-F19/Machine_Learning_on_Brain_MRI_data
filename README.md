@@ -101,4 +101,10 @@ For this sprint we will focus on converting an existing application that trains 
 * Model a simple neural data that can use preprocessed data as input
 
 
+## 7. Open Questions
+
+* Are the images created by S2I is compatible with CHRIS or not?
+* How does `docker run <image_name>` runs the model on testing data. We know that the "run" script present in /.s2i/bin directory is runs the testing.py file, but how does `docker run <image_name>` calls the "run" script in the first place?
+
+
 
