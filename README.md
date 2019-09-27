@@ -4,7 +4,7 @@
 
 #### Vision 
 
-* Expand an existing Cloud based Machine Learning application that is trained on MNIST data to identify digits, to classify Brain MRI data and make the application compatible on ChRIS, an opensource distributed software platform(https://github.com/FNNDSC/CHRIS_docs).
+* Expand an existing Cloud based Machine Learning application that is trained on MNIST data to identify digits, to classify Brain MRI data and make the application compatible with ChRIS, an opensource distributed software platform(https://github.com/FNNDSC/CHRIS_docs).
 
 
 #### High level goals include:
