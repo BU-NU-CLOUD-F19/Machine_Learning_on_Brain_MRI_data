@@ -71,10 +71,10 @@ The flow of data in the whole system will be from d0 which is input data to our 
 
 ## 5. Acceptance criteria of the project
 
-*	Correctly pre-process the Brain MRI images for the training model to be trained on
-*	The training model should be able to fetch pre-processed data from an input location and store a trained model on some output location
-*	The inference model should be able to pick up the trained models and classify any new images and store it in some output location
-*	All these layers should be integrated in the cloud platform so that it can generate a docker image to be used on a linux kernel
+*	Correctly pre-process the Brain MRI images for the training model. That is convert the image from .mgz format to ML understandable format.
+*	The training model should be able to fetch pre-processed data from an input directory and store the trained model in an output directory.
+*	The inference model should be able to pick up the trained model and classify any new images and store it in an output directory
+*	All these layers should be integrated in the cloud platform so that it can generate a docker images to be used on a linux kernel.
 
 
 
