@@ -57,6 +57,19 @@ The sample data visualization is shown below:
 
 The flow of data in the whole system will be from d0 which is input data to our first application and contains brain MRI images as well labels to train a machine learning model that segments these images and generates a model file(.pb file) as an output o0. This pretrained model will be used by the second application which does the inference on test images and generate segmentation for these images as an output.
 
+The above plugin's should be compatible with the ChRIS computing platform. To ensure this compatibilty we need to make sure that the application is containerized with docker and the application takes two positional arguments to serve as input and output directories, from where the input to application can be read from and the output of the application will be written to.
+
+The sinppet below shows a ChRIS plugin being run using the docker run command with two positional arguments for input and output directories.
+
+```
+docker run -v $(pwd)/in:/incoming -v $(pwd)/out:/outgoing       \
+        fnndsc/pl-simpledsapp simpledsapp.py                    \
+        --prefix test-                                          \
+        --sleepLength 0                                         \
+        /incoming /outgoing
+```
+
+
 ### Machine learning methodology
 
 * We are going to use tensorflow as a main tool to create a machine learning model and train on our data. The machine learning workflow is explained in the image below.
@@ -103,7 +116,7 @@ For this sprint we will focus on converting an existing application that trains 
 
 ## 7. Open Questions
 
-* Are the images created by S2I is compatible with CHRIS or not?
+* Are the images created by S2I compatible with ChRIS or not?
 * How does `docker run <image_name>` runs the model on testing data. We know that the "run" script present in /.s2i/bin directory is runs the testing.py file, but how does `docker run <image_name>` calls the "run" script in the first place?
 
 
