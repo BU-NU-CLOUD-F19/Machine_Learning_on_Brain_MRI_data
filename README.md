@@ -42,7 +42,7 @@
 *	First major task is to understand the Brain MRI data that are in .mgz format and carefully pre-process to NiFTI/any ML recognizable format to create a standardize data for the ML models to be trained on. This task also includes preprocessing of  the labels to ML readable format for the training models.
 The sample data visualization is shown below:
 
-![Image description](https://github.com/BU-NU-CLOUD-F19/Machine_Learning_on_Brain_MRI_data/blob/master/PACSPull_Output.png)
+![Image description](https://github.com/BU-NU-CLOUD-F19/Machine_Learning_on_Brain_MRI_data/blob/master/images/PACSPull_Output.png)
 
 
 ### The two major plugin description is as mentioned below.
