@@ -35,7 +35,7 @@ Synopsis
 Description
 -----------
 
-``mgz_to_jpg.py`` is a ChRIS-based application that...
+``mgz_to_jpg.py`` is a ChRIS-based application that takes in mgz file as input and converts to one of 3 formats provided by user as the argument.
 
 Agruments
 ---------
