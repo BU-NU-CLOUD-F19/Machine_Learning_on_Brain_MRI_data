@@ -12,6 +12,11 @@
 
 import os
 import sys
+import numpy as np
+import nibabel as nib
+from tqdm import tqdm
+
+
 sys.path.append(os.path.dirname(__file__))
 
 # import the Chris app superclass
@@ -136,18 +141,49 @@ class mgz_to_jpg(ChrisApp):
                           help='which type of conversion you want 1. To jpg 2. To numpy')
 
 
+
+
     def run(self, options):
         """
         Define the code to be run by this plugin app.
         """
-        print(Gstr_title)
-        print('Version: %s' % self.get_version())
+        try:
+            os.mkdir(options.outputdir + "/input")
+            os.mkdir(options.outputdir + "/label")
+
+        except OSError:
+            print ("Output folders already exist")
+        print(os.getcwd())
+
+
+
+        if options.conversion_type == "1":
+            self.convert_to_jpeg()
+        elif options.conversion_type == "2":
+        	self.convert_to_npy(options)
+        else:
+        	print("You have selected invalid option for conversion")
+
+
+    def convert_to_jpeg(self):
+        print("in jpeg flow")
+
+    def convert_to_npy(self,options):
+        dirs = os.listdir(options.inputdir)
+        dirs.pop(dirs.index(".DS_Store"))
+        for i in tqdm(dirs):
+            img = nib.load(options.inputdir + "/" + i + "/brain.mgz")
+            img1 = nib.load(options.inputdir + "/" + i + "/aparc.a2009s+aseg.mgz")
+            file = open(options.outputdir +"/input/" + i + ".npy", "wb")
+            file1 = open(options.outputdir + "/label/" +i + ".npy","wb")
+            np.save(file1, img1)
+            np.save(file, img)
 
     def show_man_page(self):
         """
         Print the app's man page.
         """
-        print(Gstr_synopsis)
+        print(options)
 
 
 # ENTRYPOINT
