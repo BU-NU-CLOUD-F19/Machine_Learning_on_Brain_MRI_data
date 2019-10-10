@@ -116,6 +116,12 @@ For this sprint we will focus on converting an existing application that trains 
 * Create a simple plugin similar to a simpledsapp(https://github.com/FNNDSC/pl-simpledsapp) for preprocessing of images
 * Model a simple neural data that can use preprocessed data as input
 
+### Sprint #2 demo presentation: https://docs.google.com/presentation/d/10toYJOk46RZsSeF8bmHmCZ0BbfwQ5Ig_u7Uicdi5GcE/edit?usp=sharing
+
+
+### Sprint #3
+
+In the previous sprint we have already finished creating ChRIS plugin to convert mgz files to jpeg or numpy arrays as we are going to try 2D and 3D UNET models. This sprint we will work towards training plugin.
 
 ## 7. Open Questions
 
