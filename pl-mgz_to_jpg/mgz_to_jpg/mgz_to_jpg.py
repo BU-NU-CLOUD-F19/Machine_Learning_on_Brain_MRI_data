@@ -1,4 +1,4 @@
-#!/usr/bin/env python                                            
+#!/usr/bin/env python
 #
 # mgz_to_jpg ds ChRIS plugin app
 #
@@ -20,14 +20,14 @@ from chrisapp.base import ChrisApp
 
 Gstr_title = """
 
-Generate a title from 
+Generate a title from
 http://patorjk.com/software/taag/#p=display&f=Doom&t=mgz_to_jpg
 
 """
 
 Gstr_synopsis = """
 
-(Edit this in-line help for app specifics. At a minimum, the 
+(Edit this in-line help for app specifics. At a minimum, the
 flags below are supported -- in the case of DS apps, both
 positional arguments <inputDir> and <outputDir>; for FS apps
 only <outputDir> -- and similarly for <in> <out> directories
@@ -35,7 +35,7 @@ where necessary.)
 
     NAME
 
-       mgz_to_jpg.py 
+       mgz_to_jpg.py
 
     SYNOPSIS
 
@@ -48,7 +48,7 @@ where necessary.)
             [-v <level>] [--verbosity <level>]                          \\
             [--version]                                                 \\
             <inputDir>                                                  \\
-            <outputDir> 
+            <outputDir>
 
     BRIEF EXAMPLE
 
@@ -66,24 +66,24 @@ where necessary.)
 
         [-h] [--help]
         If specified, show help message and exit.
-        
+
         [--json]
         If specified, show json representation of app and exit.
-        
+
         [--man]
         If specified, print (this) man page and exit.
 
         [--meta]
         If specified, print plugin meta data and exit.
-        
-        [--savejson <DIR>] 
-        If specified, save json representation file to DIR and exit. 
-        
+
+        [--savejson <DIR>]
+        If specified, save json representation file to DIR and exit.
+
         [-v <level>] [--verbosity <level>]
         Verbosity level for app. Not used currently.
-        
+
         [--version]
-        If specified, print version number and exit. 
+        If specified, print version number and exit.
 
 """
 
@@ -131,6 +131,10 @@ class mgz_to_jpg(ChrisApp):
         Define the CLI arguments accepted by this plugin app.
         Use self.add_argument to specify a new app argument.
         """
+
+        self.add_argument('--conversion_type', dest='conversion_type', type=str, optional=False,
+                          help='which type of conversion you want 1. To jpg 2. To numpy')
+
 
     def run(self, options):
         """
