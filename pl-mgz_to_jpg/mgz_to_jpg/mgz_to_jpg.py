@@ -158,15 +158,82 @@ class mgz_to_jpg(ChrisApp):
 
 
         if options.conversion_type == "1":
-            self.convert_to_jpeg()
+            self.convert_to_jpeg(options)
         elif options.conversion_type == "2":
         	self.convert_to_npy(options)
         else:
         	print("You have selected invalid option for conversion")
 
 
-    def convert_to_jpeg(self):
-        print("in jpeg flow")
+
+
+    def convert_nifti_to_png(self,new_image,output_name):
+        # converting nifti to .png
+        import scipy.misc, numpy, shutil, os, nibabel
+        import imageio
+        import os
+        import scipy
+        ask_rotate_num=90
+        outputfile=output_name
+        inputfile='input'
+        ask_rotate='y'
+        nx, ny, nz = new_image.shape
+
+        if not os.path.exists(outputfile):
+            os.makedirs(outputfile)
+            print("Created ouput directory: " + outputfile)
+
+        print('Reading NIfTI file...')
+
+        total_slices = new_image.shape[2]
+
+        slice_counter = 0
+        # iterate through slices
+        for current_slice in range(0, total_slices):
+            # alternate slices
+            if (slice_counter % 1) == 0:
+                # rotate or no rotate
+                if ask_rotate.lower() == 'y':
+                    if ask_rotate_num == 90 or ask_rotate_num == 180 or ask_rotate_num == 270:
+                        if ask_rotate_num == 90:
+                            data = np.rot90(new_image[:, :, current_slice])
+                        elif ask_rotate_num == 180:
+                            data = np.rot90(np.rot90(new_image[:, :, current_slice]))
+                        elif ask_rotate_num == 270:
+                            data = np.rot90(np.rot90(np.rot90(new_image[:, :, current_slice])))
+                elif ask_rotate.lower() == 'n':
+                    data = new_image[:, :, current_slice]
+
+                #alternate slices and save as png
+                if (slice_counter % 1) == 0:
+                    print('Saving image...')
+                    image_name = inputfile[:-4] + "_z" + "{:0>3}".format(str(current_slice+1))+ ".png"
+                    imageio.imwrite(image_name, data)
+                    print('Saved.')
+
+                    #move images to folder
+                    print('Moving image...')
+                    src = image_name
+                    shutil.move(src, outputfile)
+                    slice_counter += 1
+                    print('Moved.')
+
+        print('Finished converting images')
+
+    def convert_to_jpeg(self,options):
+        dirs = os.listdir(options.inputdir)
+        for i in tqdm(dirs):
+            # converting mgz to numpy
+            img = nib.load(options.inputdir + "/" + i + "/brain.mgz")
+            img1 = nib.load(options.inputdir + "/" + i + "/aparc.a2009s+aseg.mgz")
+            X_numpy=img.get_data()
+            y_numpy=img1.get_data()
+            # converting numpy to nifti
+            X_nifti= nib.Nifti1Image(X_numpy, affine=np.eye(4))
+            y_nifti= nib.Nifti1Image(y_numpy, affine=np.eye(4))
+            # converting nifti to png
+            self.convert_nifti_to_png(X_nifti.get_data(),options.outputdir + "/" + i+"X")
+            self.convert_nifti_to_png(y_nifti.get_data(),options.outputdir + "/" + i+"y")
 
     def convert_to_npy(self,options):
         dirs = os.listdir(options.inputdir)
