@@ -51,7 +51,7 @@ The sample data visualization is shown below:
 *	Create a plug-in using ChRIS cookie cutter module to develop a ML model using python to take these pre-processed data and labels and train the model so that it is able to classify on test dataset. Save these trained models to an output location so that it can used by the next layer/plug-in.
 *	Create a plug-in using ChRIS cookie cutter to develop an inference layer using python that will take the saved train models from the above layer and classify any unseen brain MRI data and save the inference in an output location.The overall flow diagram for both of these application is shown below.
 
-![Image description](https://github.com/BU-NU-CLOUD-F19/Machine_Learning_on_Brain_MRI_data/blob/master/Screen%20Shot%202019-09-24%20at%203.15.16%20PM.png)
+![Image description](https://github.com/BU-NU-CLOUD-F19/Machine_Learning_on_Brain_MRI_data/blob/master/images/Screen%20Shot%202019-09-24%20at%203.15.16%20PM.png)
 
 
 
@@ -75,7 +75,7 @@ docker run -v $(pwd)/in:/incoming -v $(pwd)/out:/outgoing       \
 * We are going to use tensorflow as a main tool to create a machine learning model and train on our data. The main machine learning challenge is to develop a neural network architecture that can take as input 3D images and generate same size of masks as an output. This problem is known as 3d image segmentation.
 
 
-![](https://github.com/BU-NU-CLOUD-F19/Machine_Learning_on_Brain_MRI_data/blob/master/Screen%20Shot%202019-09-27%20at%209.11.37%20AM.png)
+![](https://github.com/BU-NU-CLOUD-F19/Machine_Learning_on_Brain_MRI_data/blob/master/images/Screen%20Shot%202019-09-27%20at%209.11.37%20AM.png)
 
 
 
