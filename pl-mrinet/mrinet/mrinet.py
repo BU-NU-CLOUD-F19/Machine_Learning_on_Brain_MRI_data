@@ -1,4 +1,4 @@
-#!/usr/bin/env python                                            
+#!/usr/bin/env python
 #
 # mrinet ds ChRIS plugin app
 #
@@ -20,14 +20,14 @@ from chrisapp.base import ChrisApp
 
 Gstr_title = """
 
-Generate a title from 
+Generate a title from
 http://patorjk.com/software/taag/#p=display&f=Doom&t=mrinet
 
 """
 
 Gstr_synopsis = """
 
-(Edit this in-line help for app specifics. At a minimum, the 
+(Edit this in-line help for app specifics. At a minimum, the
 flags below are supported -- in the case of DS apps, both
 positional arguments <inputDir> and <outputDir>; for FS apps
 only <outputDir> -- and similarly for <in> <out> directories
@@ -35,7 +35,7 @@ where necessary.)
 
     NAME
 
-       mrinet.py 
+       mrinet.py
 
     SYNOPSIS
 
@@ -48,7 +48,7 @@ where necessary.)
             [-v <level>] [--verbosity <level>]                          \\
             [--version]                                                 \\
             <inputDir>                                                  \\
-            <outputDir> 
+            <outputDir>
 
     BRIEF EXAMPLE
 
@@ -66,24 +66,27 @@ where necessary.)
 
         [-h] [--help]
         If specified, show help message and exit.
-        
+
         [--json]
         If specified, show json representation of app and exit.
-        
+
         [--man]
         If specified, print (this) man page and exit.
 
         [--meta]
         If specified, print plugin meta data and exit.
-        
-        [--savejson <DIR>] 
-        If specified, save json representation file to DIR and exit. 
-        
+
+        [--savejson <DIR>]
+        If specified, save json representation file to DIR and exit.
+
         [-v <level>] [--verbosity <level>]
         Verbosity level for app. Not used currently.
-        
+
         [--version]
-        If specified, print version number and exit. 
+        If specified, print version number and exit.
+
+        [--mode]
+        It tells you if you want to train model or infer from the model
 
 """
 
@@ -131,6 +134,8 @@ class Mrinet(ChrisApp):
         Define the CLI arguments accepted by this plugin app.
         Use self.add_argument to specify a new app argument.
         """
+        self.add_argument('--mode', dest='mode', type=str, optional=False,
+                          help='What do you want to do 1. Train 2. Infer')
 
     def run(self, options):
         """
