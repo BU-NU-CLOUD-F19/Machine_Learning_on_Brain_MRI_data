@@ -89,6 +89,11 @@ where necessary.)
         [--version]
         If specified, print version number and exit.
 
+        [--conversion_type <conversion_type>]
+        Should be specified,
+        If the <conversion_type> is 1, converts the input mgz images to png
+        If the <conversion_type> is 2, converts the input mgz images to npy
+
 """
 
 

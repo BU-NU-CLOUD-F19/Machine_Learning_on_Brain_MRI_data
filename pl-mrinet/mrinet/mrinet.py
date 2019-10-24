@@ -85,8 +85,10 @@ where necessary.)
         [--version]
         If specified, print version number and exit.
 
-        [--mode]
-        It tells you if you want to train model or infer from the model
+        [--mode <mode>]
+        Should be specified,
+        If the <mode> is train, model will be trained.
+        If the <mode> is infer, test images will be inferred from model.
 
 """
 
