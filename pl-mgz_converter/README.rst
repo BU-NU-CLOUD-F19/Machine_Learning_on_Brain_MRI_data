@@ -92,7 +92,7 @@ Now, prefix all calls with
 .. code:: bash
     mkdir in out && chmod 777 out
     docker run --rm -v --conversion_type <conversion_type> $(pwd)/out:/outgoing                             \
-            fnndsc/pl-mgz_converter mgz_converter.py                                                        \
+            pl-mgz_converter mgz_converter.py                                                               \
             /incoming /outgoing                                                                             
 
 Thus, getting inline help is:
@@ -101,7 +101,7 @@ Thus, getting inline help is:
 
     mkdir in out && chmod 777 out
     docker run --rm -v --conversion_type <conversion_type> $(pwd)/in:/incoming -v $(pwd)/out:/outgoing      \
-            fnndsc/pl-mgz_converter mgz_converter.py                                                        \
+            pl-mgz_converter mgz_converter.py                                                               \
             --man                                                                                           \
             /incoming /outgoing
 
@@ -115,7 +115,7 @@ Convert mgz images to png
 
     mkdir in out && chmod 777 out
     docker run --rm -v --conversion_type 1 $(pwd)/out:/outgoing                                             \
-            fnndsc/pl-mgz_converter mgz_converter.py                                                        \
+            pl-mgz_converter mgz_converter.py                                                        \
             /incoming /outgoing   
 
 
@@ -128,7 +128,7 @@ Convert mgz images to npy
     
     mkdir in out && chmod 777 out
     docker run --rm -v --conversion_type 2 $(pwd)/out:/outgoing                                             \
-            fnndsc/pl-mgz_converter mgz_converter.py                                                        \
+            pl-mgz_converter mgz_converter.py                                                               \
             /incoming /outgoing   
 
 This will convert the ``*.mgz`` images present in the input directory to ``*.npy`` format and saves them inside out/numpy directory
