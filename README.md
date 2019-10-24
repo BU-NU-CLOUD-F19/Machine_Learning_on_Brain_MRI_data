@@ -123,6 +123,13 @@ For this sprint we will focus on converting an existing application that trains 
 
 In the previous sprint we have already finished creating ChRIS plugin to convert mgz files to jpeg or numpy arrays as we are going to try 2D and 3D UNET models. This sprint we will work towards training plugin.
 
+* Write a neural network that can segment 2D images according to the paper finalised.
+* Write a neural network that can segment 3D images according to the paper.
+* Create a ChRIS compatible application to train and infer from given dataset.
+
+
+### Sprint #3 demo presentation: https://docs.google.com/presentation/d/1VsX2K0JT3BNESlGc5ob16MMkdHf2oEWAf01OMnuB8nM/edit?usp=sharing
+
 ## 7. Open Questions
 
 * Are the images created by S2I compatible with ChRIS or not?
