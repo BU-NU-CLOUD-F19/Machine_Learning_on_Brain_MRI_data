@@ -112,22 +112,25 @@ Convert mgz images to png
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: bash
+
     mkdir in out && chmod 777 out
     docker run --rm -v --conversion_type 1 $(pwd)/out:/outgoing                                             \
             fnndsc/pl-mgz_converter mgz_converter.py                                                        \
             /incoming /outgoing   
 
-This will convert the *.mgz images present in the input directory to *.png format and saves them inside out/png directory
+
+This will convert the ``*.mgz`` images present in the input directory to ``*.png`` format and saves them inside out/png directory
 
 Convert mgz images to npy 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code:: bash
+    
     mkdir in out && chmod 777 out
     docker run --rm -v --conversion_type 2 $(pwd)/out:/outgoing                                             \
             fnndsc/pl-mgz_converter mgz_converter.py                                                        \
             /incoming /outgoing   
 
-This will convert the *.mgz images present in the input directory to *.npy format and saves them inside out/numpy directory
+This will convert the ``*.mgz`` images present in the input directory to ``*.npy`` format and saves them inside out/numpy directory
 
 
