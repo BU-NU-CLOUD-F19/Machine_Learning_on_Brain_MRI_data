@@ -28,7 +28,8 @@ Synopsis
         [-v <level>] [--verbosity <level>]                          \
         [--version]                                                 \
         [--man]                                                     \
-        [--meta]                                                    \
+        [--meta]   
+        --mode <mode>                                           \
         <inputDir>
         <outputDir> 
 
