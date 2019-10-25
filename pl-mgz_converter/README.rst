@@ -29,7 +29,7 @@ Synopsis
         [--version]                                                 \
         [--man]                                                     \
         [--meta]                                                    \
-        [--conversion_type <conversion_type>]                       \
+        --conversion_type <conversion_type>                         \
         <inputDir>                                                  \
         <outputDir>                                                 \
 
