@@ -9,3 +9,6 @@ imageio
 keras
 matplotlib
 scipy
+tensorflow
+scikit-image
+opencv-python-headless
