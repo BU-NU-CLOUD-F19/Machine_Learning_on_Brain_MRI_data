@@ -16,7 +16,7 @@ pl-mrinet
 Abstract
 --------
 
-An app to ...
+An app to train a neural network to segment Brain MRI data.
 
 
 Synopsis
@@ -28,7 +28,8 @@ Synopsis
         [-v <level>] [--verbosity <level>]                          \
         [--version]                                                 \
         [--man]                                                     \
-        [--meta]                                                    \
+        [--meta]   
+        --mode <mode>                                           \
         <inputDir>
         <outputDir> 
 
@@ -53,6 +54,9 @@ Agruments
 
     [--meta]
     If specified, print plugin meta data.
+    
+    [--mode]
+    Select 1 for training the neural network, 2 for running inference on test images.
 
 
 Run

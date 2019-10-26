@@ -1,2 +1,14 @@
 chrisapp
 pudb
+nibabel
+numpy
+tqdm
+scipy
+pillow
+imageio
+keras
+matplotlib
+scipy
+tensorflow
+scikit-image
+opencv-python-headless

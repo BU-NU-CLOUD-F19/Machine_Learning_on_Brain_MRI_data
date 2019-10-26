@@ -125,6 +125,11 @@ In the previous sprint we have already finished creating ChRIS plugin to convert
 
 ### Sprint #3 Demo Presentation : https://docs.google.com/presentation/d/1VsX2K0JT3BNESlGc5ob16MMkdHf2oEWAf01OMnuB8nM/edit#slide=id.g6442df6a06_5_7
 
+* Write a neural network that can segment 2D images according to the paper finalised.
+* Write a neural network that can segment 3D images according to the paper.
+* Create a ChRIS compatible application to train and infer from given dataset.
+
+
 ## 7. Open Questions
 
 * Are the images created by S2I compatible with ChRIS or not?
