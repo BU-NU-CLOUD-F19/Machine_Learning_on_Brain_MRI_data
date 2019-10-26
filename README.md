@@ -130,6 +130,7 @@ In the previous sprint we have already finished creating ChRIS plugin to convert
 
 ### Sprint #3 demo presentation: https://docs.google.com/presentation/d/1VsX2K0JT3BNESlGc5ob16MMkdHf2oEWAf01OMnuB8nM/edit?usp=sharing
 
+
 ## 7. Open Questions
 
 * Are the images created by S2I compatible with ChRIS or not?
