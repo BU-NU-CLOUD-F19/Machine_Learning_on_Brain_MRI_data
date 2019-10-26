@@ -127,8 +127,8 @@ In the previous sprint we have already finished creating ChRIS plugin to convert
 * Write a neural network that can segment 3D images according to the paper.
 * Create a ChRIS compatible application to train and infer from given dataset.
 
-
-### Sprint #3 demo presentation: https://docs.google.com/presentation/d/1VsX2K0JT3BNESlGc5ob16MMkdHf2oEWAf01OMnuB8nM/edit?usp=sharing
+### Sprint #3 Demo Presentation : 
+https://docs.google.com/presentation/d/1VsX2K0JT3BNESlGc5ob16MMkdHf2oEWAf01OMnuB8nM/edit?usp=sharing
 
 ## 7. Open Questions
 
