@@ -132,8 +132,7 @@ https://docs.google.com/presentation/d/1VsX2K0JT3BNESlGc5ob16MMkdHf2oEWAf01OMnuB
 
 ### Sprint #4
 ### Sprint #4 Demo Presentation:
-https://docs.google.com/presentation/d/1XprRZ43IxtRajFhGqwB32l9Gx5X1x1KQM6tadN1fsPs/edit?ts=5dc4a8e8#slide=id.p
-
+https://docs.google.com/presentation/d/1XprRZ43IxtRajFhGqwB32l9Gx5X1x1KQM6tadN1fsPs/edit?usp=sharing
 ## 7. Open Questions
 
 * Are the images created by S2I compatible with ChRIS or not?
