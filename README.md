@@ -131,6 +131,11 @@ In the previous sprint we have already finished creating ChRIS plugin to convert
 https://docs.google.com/presentation/d/1VsX2K0JT3BNESlGc5ob16MMkdHf2oEWAf01OMnuB8nM/edit?usp=sharing
 
 ### Sprint #4
+* Setup Swift and push mgz data to swift.
+* Creating an Aggregator to reconstruct a 3D image.
+* Feed the input data using FS plugin.
+* Run the training and inference plugin using S2I.
+
 ### Sprint #4 Demo Presentation:
 https://docs.google.com/presentation/d/1XprRZ43IxtRajFhGqwB32l9Gx5X1x1KQM6tadN1fsPs/edit?usp=sharing
 ## 7. Open Questions
