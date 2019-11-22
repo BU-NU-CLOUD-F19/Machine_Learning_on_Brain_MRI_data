@@ -138,6 +138,14 @@ https://docs.google.com/presentation/d/1VsX2K0JT3BNESlGc5ob16MMkdHf2oEWAf01OMnuB
 
 ### Sprint #4 Demo Presentation:
 https://docs.google.com/presentation/d/1XprRZ43IxtRajFhGqwB32l9Gx5X1x1KQM6tadN1fsPs/edit?usp=sharing
+
+### Sprint #5
+* Chaining all the plugins and running on ChRIS
+* Spike: Investigate if UI can be used to connect the plugins and upload data to Swift
+
+### Sprint #5 Demo Presentation
+https://docs.google.com/presentation/d/15b81vt4P4kk22WpDI7vT-K6lNURinmsTu-yRgD-IGIQ/edit?usp=sharing
+
 ## 7. Open Questions
 
 * Are the images created by S2I compatible with ChRIS or not?
