@@ -196,7 +196,7 @@ class Tensorflowapp(ChrisApp):
 
 
     def create_output(self, options, key, value):
-        new_name = options.prefix + key
+        new_name = "prefix" + key
         str_outpath = os.path.join(options.outputdir, new_name)
         str_outpath = os.path.abspath(str_outpath)
         print('Creating new file... %s' % str_outpath)
@@ -238,20 +238,7 @@ class Tensorflowapp(ChrisApp):
 
 
     
-    def create_output(self, options, key, value):
-        new_name = options.prefix + key
-        str_outpath = os.path.join(options.outputdir, new_name)
-        str_outpath = os.path.abspath(str_outpath)
-        print('Creating new file... %s' % str_outpath)
-        if not os.path.exists(options.outputdir):
-            try:
-                os.mkdir(options.outputdir)
-            except OSError:
-                print("Creation of the directory %s failed" % options.outputdir)
-            else:
-                print("Successfully created the directory %s " % options.outputdir)
-        with open(str_outpath, 'w') as f:
-            f.write(str(value))
+   
 
     def load_graph(frozen_graph_filename, name_prefix="prefix"):
         # We load the protobuf file from the disk and parse it to retrieve the
