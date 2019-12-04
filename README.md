@@ -8,15 +8,16 @@
 
 
 #### High level goals include:
-*	Pre-process the Brain MRI data that are in. mgz form to NIfTI(https://nifti.nimh.nih.gov) format so that it will be easy for ML models to understand
-*	Create a ChRIS plugin to train an ML model on the pre-processed MRI data and save the trained model in an output location
-*	Create a ChRIS plugin to infer from the saved trained model and store the classified images in an output location
+*	Pre-process the Brain MRI data that are in. mgz form to NIfTI(https://nifti.nimh.nih.gov) or .png format so that it will be easy for ML models to understand
+*	Create a ChRIS plugin to do the pre-processing of the input images.
+*	Create a ChRIS plugin to train an ML model on the pre-processed MRI data and save the trained model in an output location.
+*	Create a ChRIS plugin to infer from the saved trained model and store the classified images in an output location.
 
 
 
 ## 2. Users/Personas Of The Project
 
-* The application or plugins will be used by clinicians and researchers who wants to segment the Brain MRI data which is in mgz 3d image format to analyze the MRI in a better way. Also Machine learning researchers who wants to try out different models without worrying about the environment and data preprocessing setup can use this application.
+* The application or plugins will be used by clinicians and researchers who wants to segment the Brain MRI data which is in .mgz 3D image format to analyze the MRI in a better way. Also Machine learning researchers who wants to try out different models without worrying about the environment and data preprocessing setup can use this application.
 
 
 ## 3. Scope and Features
@@ -24,7 +25,7 @@
 ### Major Features include
 
 *	To create major plugins: 
-1. A plugin to preprocess the input .mgz images. This plugin should read mgz images that are uploaded for inference or training from given input location and should preprocess them to a machine learning compatible format and store to train or inference folder according to the option selected.
+1. A plugin to preprocess the input .mgz images. This plugin should read .mgz images that are uploaded for inference or training from given input location and should preprocess them to a machine learning compatible format and store it in an output folder.
 2. A plugin to train the machine learning model with images present in an input directory and save the trained model in an output directory, where the input and output directories are given as a positional arguments in the docker run command.
 3. A plugin which loads the saved model and test images from input directories and saves the inferred segmented images to an output directory, where the input and output directories are given as a positional arguments in the docker run command.
 
@@ -72,7 +73,7 @@ docker run -v $(pwd)/in:/incoming -v $(pwd)/out:/outgoing       \
 
 ### Machine learning methodology
 
-* We are going to use tensorflow as a main tool to create a machine learning model and train on our data. The main machine learning challenge is to develop a neural network architecture that can take as input 3D images and generate same size of masks as an output. This problem is known as 3d image segmentation.
+* We are going to use tensorflow as a main tool to create a machine learning model and train on our data. The main machine learning challenge is to develop a neural network architecture that can take as input 3D images and generate same size of masks as an output. This problem is known as 3D image segmentation.
 
 
 ![](https://github.com/BU-NU-CLOUD-F19/Machine_Learning_on_Brain_MRI_data/blob/master/images/Screen%20Shot%202019-09-27%20at%209.11.37%20AM.png)
@@ -145,11 +146,3 @@ https://docs.google.com/presentation/d/1XprRZ43IxtRajFhGqwB32l9Gx5X1x1KQM6tadN1f
 
 ### Sprint #5 Demo Presentation
 https://docs.google.com/presentation/d/15b81vt4P4kk22WpDI7vT-K6lNURinmsTu-yRgD-IGIQ/edit?usp=sharing
-
-## 7. Open Questions
-
-* Are the images created by S2I compatible with ChRIS or not?
-* How does `docker run <image_name>` runs the model on testing data. We know that the "run" script present in /.s2i/bin directory is runs the testing.py file, but how does `docker run <image_name>` calls the "run" script in the first place?
-* Should we preprocess all the images before running training and inference both or prerprocess when they are needed?
-* How to version different neural network and switch at time of inference?
-
