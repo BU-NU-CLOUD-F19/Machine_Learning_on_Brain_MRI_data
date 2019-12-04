@@ -82,6 +82,7 @@ class Tensorflowapp(ChrisApp):
         Define the code to be run by this plugin app.
         """
         if options.run_mode == "train":
+            os.mkdir(options.outputdir)
             if not os.path.exists(options.outputdir):
                 try:
                     os.mkdir(options.outputdir)
@@ -99,10 +100,6 @@ class Tensorflowapp(ChrisApp):
 
 
         digit_image = None
-        # if options.inference_path:
-        #     str_path = os.path.abspath(options.inference_path)
-            
-        #     print("Test Image shape: ", digit_image.shape)
         self.mrinet_training(options, digit_image)
 
 
