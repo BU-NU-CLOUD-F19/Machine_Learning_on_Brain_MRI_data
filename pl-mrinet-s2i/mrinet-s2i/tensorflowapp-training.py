@@ -217,11 +217,7 @@ class Tensorflowapp(ChrisApp):
             np.append(test_data,cv2.imread(options.inputdir + "/" + i))
         return test_data
 
-    def run(self, options):
-        """
-        Define the code to be run by this plugin app.
-        """
-        self.run_tensorflow_app(options)
+
 
 
 
