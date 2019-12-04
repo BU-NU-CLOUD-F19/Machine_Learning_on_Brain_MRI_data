@@ -82,7 +82,6 @@ class Tensorflowapp(ChrisApp):
         Define the code to be run by this plugin app.
         """
         if options.run_mode == "train":
-            os.mkdir(options.outputdir)
             if not os.path.exists(options.outputdir):
                 try:
                     os.mkdir(options.outputdir)
@@ -95,7 +94,6 @@ class Tensorflowapp(ChrisApp):
             self.predict(options)
 
     def run_tensorflow_app(self, options):
-
 
 
 
