@@ -83,12 +83,12 @@ class Tensorflowapp(ChrisApp):
         """
         if options.run_mode == "train":
             if not os.path.exists(options.outputdir):
-            try:
-                os.mkdir(options.outputdir)
-            except OSError:
-                print("Creation of the directory %s failed" % options.outputdir)
-            else:
-                print("Successfully created the directory %s " % options.outputdir)
+                try:
+                    os.mkdir(options.outputdir)
+                except OSError:
+                    print("Creation of the directory %s failed" % options.outputdir)
+                else:
+                    print("Successfully created the directory %s " % options.outputdir)
             self.run_tensorflow_app(options)
         else:
             self.predict(options)
