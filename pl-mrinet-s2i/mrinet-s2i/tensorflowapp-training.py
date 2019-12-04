@@ -92,10 +92,10 @@ class Tensorflowapp(ChrisApp):
 
 
         digit_image = None
-        if options.inference_path:
-            str_path = os.path.abspath(options.inference_path)
+        # if options.inference_path:
+        #     str_path = os.path.abspath(options.inference_path)
             
-            print("Test Image shape: ", digit_image.shape)
+        #     print("Test Image shape: ", digit_image.shape)
         self.mrinet_training(options, digit_image)
 
 
