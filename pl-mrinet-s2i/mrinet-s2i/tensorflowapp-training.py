@@ -190,7 +190,7 @@ class Tensorflowapp(ChrisApp):
 
         model.fit(train_data,label_data,epochs=1,batch_size=1,verbose=1,shuffle=True,validation_split=0.8)
         str_outpath = os.path.join(options.outputdir,"my_model", self.VERSION)
-        save_model(model,options.outputdir + "/model.hdf5")
+        save_model("model.hdf5")
 
 
 
