@@ -24,7 +24,7 @@ import numpy as np
 np.random.seed(256)
 import tensorflow as tf
 
-from tensorflow.keras.models import Model,load_model
+from tensorflow.keras.models import Model,load_model, save_model
 from tensorflow.keras.layers import Input, concatenate, Conv2D, MaxPooling2D, Conv2DTranspose, AveragePooling3D, ZeroPadding3D
 from tensorflow.keras.optimizers import RMSprop, Adam, SGD
 from tensorflow.keras.callbacks import ModelCheckpoint, CSVLogger
@@ -190,7 +190,7 @@ class Tensorflowapp(ChrisApp):
 
         model.fit(train_data,label_data,epochs=1,batch_size=1,verbose=1,shuffle=True,validation_split=0.8)
         str_outpath = os.path.join(options.outputdir,"my_model", self.VERSION)
-        tf.keras.models.save_model(model,options.outputdir + "/model.h5")
+        save_model(model,options.outputdir + "/model.h5")
 
 
 
