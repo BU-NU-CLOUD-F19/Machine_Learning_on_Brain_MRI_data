@@ -24,7 +24,7 @@ import numpy as np
 np.random.seed(256)
 import tensorflow as tf
 
-from tensorflow.keras.models import Model,load_model
+from tensorflow.keras.models import Model,load_model, save_model
 from tensorflow.keras.layers import Input, concatenate, Conv2D, MaxPooling2D, Conv2DTranspose, AveragePooling3D, ZeroPadding3D
 from tensorflow.keras.optimizers import RMSprop, Adam, SGD
 from tensorflow.keras.callbacks import ModelCheckpoint, CSVLogger
@@ -74,13 +74,7 @@ class Tensorflowapp(ChrisApp):
         """
         Define the CLI arguments accepted by this plugin app.
         """
-        self.add_argument('--prefix', dest='prefix', type=str, optional=True,
-                          help='prefix for file names')
-        self.add_argument('--inference_path', dest='inference_path', type=str,
-                          optional=True, help='path of images')
-        self.add_argument('--saved_model_name', dest='saved_model_name',
-                          type=str, optional=True,
-                          help='name for exporting saved model')
+    
         self.add_argument("--run_mode",dest="run_mode",type=str,optional=False,help="Select run mode from train or infer")
 
     def run(self, options):
@@ -88,6 +82,13 @@ class Tensorflowapp(ChrisApp):
         Define the code to be run by this plugin app.
         """
         if options.run_mode == "train":
+            if not os.path.exists(options.outputdir):
+                try:
+                    os.mkdir(options.outputdir)
+                except OSError:
+                    print("Creation of the directory %s failed" % options.outputdir)
+                else:
+                    print("Successfully created the directory %s " % options.outputdir)
             self.run_tensorflow_app(options)
         else:
             self.predict(options)
@@ -96,12 +97,7 @@ class Tensorflowapp(ChrisApp):
 
 
 
-
         digit_image = None
-        if options.inference_path:
-            str_path = os.path.abspath(options.inference_path)
-            
-            print("Test Image shape: ", digit_image.shape)
         self.mrinet_training(options, digit_image)
 
 
@@ -193,16 +189,13 @@ class Tensorflowapp(ChrisApp):
         label_data = np.expand_dims(label_data,axis=3) 
 
         model.fit(train_data,label_data,epochs=1,batch_size=1,verbose=1,shuffle=True,validation_split=0.8)
-        str_outpath = os.path.join(options.outputdir, options.saved_model_name, self.VERSION)
-        if os.path.isdir(str_outpath):
-                model.save(str_outpath)
-        else:
-            model.save(options.outputdir + "/model.h5")
+        str_outpath = os.path.join(options.outputdir,"my_model", self.VERSION)
+        save_model(str_outpath)
 
 
 
     def create_output(self, options, key, value):
-        new_name = options.prefix + key
+        new_name = "prefix" + key
         str_outpath = os.path.join(options.outputdir, new_name)
         str_outpath = os.path.abspath(str_outpath)
         print('Creating new file... %s' % str_outpath)
@@ -223,17 +216,13 @@ class Tensorflowapp(ChrisApp):
             np.append(test_data,cv2.imread(options.inputdir + "/" + i))
         return test_data
 
-    def run(self, options):
-        """
-        Define the code to be run by this plugin app.
-        """
-        self.run_tensorflow_app(options)
+
 
 
 
     def predict(self,options):
         model = self.get_unet()
-        model = load_model(options.outputdir + "/model.h5")
+        model = load_model(options.outputdir + "/model.hdf5")
         test_data = self.get_test_data(options)
         test_data = np.expand_dims(test_data,axis=3)
         cv2.imwrite(options.outputdir + "/inference_image.jpg",model.predict(test_data))
@@ -244,20 +233,7 @@ class Tensorflowapp(ChrisApp):
 
 
     
-    def create_output(self, options, key, value):
-        new_name = options.prefix + key
-        str_outpath = os.path.join(options.outputdir, new_name)
-        str_outpath = os.path.abspath(str_outpath)
-        print('Creating new file... %s' % str_outpath)
-        if not os.path.exists(options.outputdir):
-            try:
-                os.mkdir(options.outputdir)
-            except OSError:
-                print("Creation of the directory %s failed" % options.outputdir)
-            else:
-                print("Successfully created the directory %s " % options.outputdir)
-        with open(str_outpath, 'w') as f:
-            f.write(str(value))
+   
 
     def load_graph(frozen_graph_filename, name_prefix="prefix"):
         # We load the protobuf file from the disk and parse it to retrieve the

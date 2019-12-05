@@ -60,30 +60,11 @@ Run
 
 This ``plugin`` can be run in two modes: natively as a python package or as a containerized docker image.
 
-Using PyPI
-~~~~~~~~~~
-
-To run from PyPI, simply do a 
-
-.. code:: bash
-
-    pip install mgz_converter
-
-and run with
-
-.. code:: bash
-
-    mgz_converter.py --man /tmp /tmp
-
-to get inline help. The app should also understand being called with only two positional arguments
-
-.. code:: bash
-
-    mgz_converter.py /some/input/directory /destination/directory
-
-
 Using ``docker run``
 ~~~~~~~~~~~~~~~~~~~~
+To create the docker image, from the ``pl-mgz_converter`` directory run 
+
+``docker build -t mgz_converter .``
 
 To run using ``docker``, be sure to assign an "input" directory to ``/incoming`` and an output directory to ``/outgoing``. *Make sure that the* ``$(pwd)/out`` *directory is world writable!*
 
@@ -114,7 +95,7 @@ Convert mgz images to png
 .. code:: bash
 
     mkdir in out && chmod 777 out
-    docker run --rm -v $(pwd)/out:/outgoing                                                          \
+    docker run --rm -v $(pwd)/in:/incoming -v $(pwd)/out:/outgoing                                   \
             pl-mgz_converter mgz_converter.py --conversion_type 1                                    \
             /incoming /outgoing   
 
@@ -127,7 +108,7 @@ Convert mgz images to npy
 .. code:: bash
     
     mkdir in out && chmod 777 out
-    docker run --rm -v $(pwd)/out:/outgoing                                                                 \
+    docker run --rm -v $(pwd)/in:/incoming -v $(pwd)/out:/outgoing                                          \
             pl-mgz_converter mgz_converter.py --conversion_type 2                                           \
             /incoming /outgoing   
 
