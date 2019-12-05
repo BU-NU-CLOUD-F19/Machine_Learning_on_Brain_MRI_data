@@ -149,7 +149,7 @@ https://docs.google.com/presentation/d/15b81vt4P4kk22WpDI7vT-K6lNURinmsTu-yRgD-I
 
 
 ### Final Presentation Video
-https://youtu.be/vSAt9j4QFnc
+https://youtu.be/vqybt8kmtX4
 
 To convert the image of our application, please follow the steps mentioned in the README inside pl-mgz_converter directory
 found here : pl-mgz_converter/README.rst
