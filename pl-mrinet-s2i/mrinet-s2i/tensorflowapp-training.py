@@ -190,7 +190,7 @@ class Tensorflowapp(ChrisApp):
 
         model.fit(train_data,label_data,epochs=1,batch_size=1,verbose=1,shuffle=True,validation_split=0.8)
         str_outpath = os.path.join(options.outputdir,"my_model", self.VERSION)
-        save_model(model,options.outputdir + "/model.h5")
+        save_model(model,options.outputdir + "/model.hdf5")
 
 
 
@@ -222,7 +222,7 @@ class Tensorflowapp(ChrisApp):
 
     def predict(self,options):
         model = self.get_unet()
-        model = load_model(options.outputdir + "/model.h5")
+        model = load_model(options.outputdir + "/model.hdf5")
         test_data = self.get_test_data(options)
         test_data = np.expand_dims(test_data,axis=3)
         cv2.imwrite(options.outputdir + "/inference_image.jpg",model.predict(test_data))

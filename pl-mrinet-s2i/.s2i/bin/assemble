@@ -36,7 +36,7 @@ ls  /opt/app-root/src/
 
 echo "---> Create output dir: /opt/app-root/src/output"
 mkdir /opt/app-root/src/output
-
+chmod 777 /opt/app-root/src/output
 
 # echo "---> Training the model"
 # # exec python /opt/app-root/src/mrinet-s2i/tensorflowapp-training.py --prefix mnist- --saved_model_name my_saved_model /opt/app-root/src/input /opt/app-root/src/output
