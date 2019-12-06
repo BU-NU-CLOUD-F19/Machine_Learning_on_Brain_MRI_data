@@ -146,3 +146,12 @@ https://docs.google.com/presentation/d/1XprRZ43IxtRajFhGqwB32l9Gx5X1x1KQM6tadN1f
 
 ### Sprint #5 Demo Presentation
 https://docs.google.com/presentation/d/15b81vt4P4kk22WpDI7vT-K6lNURinmsTu-yRgD-IGIQ/edit?usp=sharing
+
+
+### Final Presentation Video
+https://youtu.be/rFNroX6WVT0
+
+### Steps to install the plugins locally
+To install the plugin which converts the data from .mgz to .png follow the steps mentioned in readme which is present in ``pl-mgz_converter`` directory. Found here: pl-mgz_converter/README.rst
+
+To install the plugin which trains the model and generateed segmented images follow the steps mentioned in readme which is present in ``pl-mrinet`` directory. Found here: pl-mrinet/README.rst

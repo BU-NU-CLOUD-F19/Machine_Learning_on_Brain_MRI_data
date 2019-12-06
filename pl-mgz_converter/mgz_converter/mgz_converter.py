@@ -234,7 +234,6 @@ class Mgz_converter(ChrisApp):
 
     def convert_to_npy(self,options):
         dirs = os.listdir(options.inputdir)
-        dirs.pop(dirs.index(".DS_Store"))
         for i in tqdm(dirs):
             img = nib.load(options.inputdir + "/" + i + "/brain.mgz")
             img1 = nib.load(options.inputdir + "/" + i + "/aparc.a2009s+aseg.mgz")
