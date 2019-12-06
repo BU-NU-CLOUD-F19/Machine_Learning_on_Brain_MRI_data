@@ -31,7 +31,6 @@ from tensorflow.keras.callbacks import ModelCheckpoint, CSVLogger
 from tensorflow.keras import backend as K
 from tensorflow.keras.regularizers import l2
 from tensorflow.keras.utils import plot_model
-import keras
 import os
 K.set_image_data_format('channels_last')
 import cv2
