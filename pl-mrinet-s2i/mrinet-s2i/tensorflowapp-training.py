@@ -31,6 +31,7 @@ from tensorflow.keras.callbacks import ModelCheckpoint, CSVLogger
 from tensorflow.keras import backend as K
 from tensorflow.keras.regularizers import l2
 from tensorflow.keras.utils import plot_model
+import keras
 import os
 K.set_image_data_format('channels_last')
 import cv2
@@ -190,7 +191,9 @@ class Tensorflowapp(ChrisApp):
 
         model.fit(train_data,label_data,epochs=1,batch_size=1,verbose=1,shuffle=True,validation_split=0.8)
         str_outpath = os.path.join(options.outputdir,"my_model", self.VERSION)
-        save_model(str_outpath)
+        model.save("/opt/app-root/src/output/model.h5")
+        # with open("/opt/app-root/src/output/model.h5","w") as file:
+        #     save_model(model,file.read)
 
 
 
